@@ -1,0 +1,32 @@
+input{
+    display: flex;
+    width: 70%;
+    align-items: center;
+    height: 45px;
+    padding: 0 15px;
+    font-size: 16px;
+    border: 1px solid #dfe1e5;
+    border-radius: 25px;
+    background-color: #fff;
+    box-shadow: 0px 1px 6px rgba(32, 33, 36, 0.28);
+    transition: box-shadow 0.2s ease-in-out, border-color 0.2s ease-in-out;
+    outline: none;
+    align-self: center;
+    align-items: center;
+    
+
+}
+#searchDiv{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-bar::placeholder {
+    color: #999;
+  }
+  
+  .search-bar:focus {
+    border-color: #4285f4;
+    box-shadow: 0px 1px 8px rgba(66, 133, 244, 0.6);
+  }
