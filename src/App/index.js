@@ -1,11 +1,7 @@
 import React from 'react';
-//import './App.css';
-import { TodoCounter } from '../TodoCounter';
-import {TodoSearch} from '../TodoSearch';
-import { TodoList } from '../TodoList';
-import { TodoItem } from '../TodoItem';
-import {CreateTodoButton} from '../CreateTodoButton';
+import { AppUI } from './AppUI';
 import { useLocalStorage } from './useLocalStorage';
+
 
 /* 
  const defaultTodos = [
@@ -16,9 +12,7 @@ import { useLocalStorage } from './useLocalStorage';
 ]
 */
 
-
 function App() {
-  
 
   const [todos, saveTodos] = useLocalStorage('TODOS_V1', [])
   const [searchValue, setSearchValue] = React.useState('')
@@ -27,8 +21,8 @@ function App() {
   const completedTodos = todos.filter(todo => !!todo.completed).length
 
   const searchedTodos = todos.filter((todo) => {
-    const textTodo = todo.text.toLocaleLowerCase()
-    const textSearch = searchValue.toLocaleLowerCase() 
+    const textTodo = todo.text.toLowerCase()
+    const textSearch = searchValue.toLowerCase() 
     return textTodo.includes(textSearch)})
 
 
@@ -50,33 +44,21 @@ function App() {
       saveTodos(newTodos);
     }
 
+    const addNewTodo = () => {
+      console.log("Boton funciona + ")
+    }
+
   return (
-    <React.Fragment>
-      <TodoCounter
-        completed={completedTodos}
-        total={totalTodos}
-        />
-      <TodoSearch 
-        searchValue = {searchValue}
-        setSearchValue = {setSearchValue}
-      />
-
-      <TodoList>
-        {searchedTodos.map(todo => (
-          <TodoItem 
-          key={todo.text} 
-          text={todo.text}
-          completed={todo.completed}
-          onComplete={() => onComplete(todo.text)}
-          onDelete={()=>deleteTodo(todo.text)}
-          />
-          
-        ))}
-      </TodoList>
-
-      <CreateTodoButton/>
-
-    </React.Fragment >
-  );
+    <AppUI 
+    completedTodos = {completedTodos}
+    totalTodos = {totalTodos}
+    searchValue = {searchValue}
+    setSearchValue = {setSearchValue}
+    searchedTodos = {searchedTodos}
+    onComplete = {onComplete}
+    deleteTodo = {deleteTodo}
+    addNewTodo = {addNewTodo}
+    />
+  )
 }
 export default App;

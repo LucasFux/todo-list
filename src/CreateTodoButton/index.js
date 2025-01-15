@@ -1,7 +1,9 @@
 import './CreateTodoButton.css'
-function CreateTodoButton(){
+
+
+function CreateTodoButton(props){
     return(
-    <button className="CreateTodoButton" onClick={()=> console.log("Le diste click")}>+</button>
+    <button className="CreateTodoButton" onClick={props.addNewTodo}>+</button>
     )
 }
 export {CreateTodoButton};
