@@ -1,1 +1,1 @@
-Aplicación de ToDo List desarrollada en el [curso de introducción a React.js](http://platzi.com/cursos/react/ "curso de introducción a React.js") de [Platzi](http://platzi.com "Platzi")`.
+Aplicación de ToDo List desarrollada en el [curso de introducción a React.js](http://platzi.com/cursos/react/ "curso de introducción a React.js") de [Platzi](http://platzi.com "Platzi").
